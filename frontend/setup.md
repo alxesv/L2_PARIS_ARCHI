@@ -41,7 +41,10 @@ et rajouter ce morceau de code afin qu'apache puisse afficher le fichier index.p
         SetHandler application/x-httpd-php
 </FilesMatch>
 ```
-
+Aller dans le dossier frontend et créer un fichier .env avec la variable d'environnement suivante :
+```bash
+BASE_URL=("url de l'api")
+```
 
 Enfin redémarrer le serveur apache 
 ```bash

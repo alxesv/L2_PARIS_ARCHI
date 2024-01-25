@@ -22,8 +22,8 @@ if ($data === null) {
     return($data);
 }
 }
-
-$api_url = "http://10.100.3.0:8000/api/compteur/";
+$env = parse_ini_file('.env');
+$api_url = "". $env["BASE_URL"] . "/api/compteur/";
 $compteur_data= getData($api_url)["compteur"];
 ?>
 <html>
