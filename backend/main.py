@@ -37,6 +37,9 @@ async def verify_token(request: Request, call_next):
     request param = details on the request
     call_next     = call the function next the middleware
     """
+        # Debug mode, no token verification
+    if True :
+        return await call_next(request)
     if request.url.path.startswith("/api"):
         # don't verify on route /jwt/
         if request.url.path == "/api/auth/jwt":
