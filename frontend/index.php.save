@@ -1,0 +1,39 @@
+<?php
+$apiUrl = 'http://10.100.3.0:8000/api/compteur';
+
+$ch = curl_init($apiUrl);
+
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+
+if (curl_errno($ch)) {
+    echo 'Curl error: ' . curl_error($ch);
+}
+
+curl_close($ch);
+
+$compteur_data = json_decode($response, true);
+
+if ($compteur_data === null) {
+    echo 'Error decoding JSON';
+} else {
+    print_r($compteur_data["message"]);
+}
+?>
+<html>
+    <head>
+        <title>Welcome to your_domain!</title>
+    </head>
+    <body>
+	  <h1>Success! </h1>
+
+    <?php if ($compteur_data["message"] !== null): ?>
+        <div><?=$compteur_data[";?></div>
+        <?php endif; ?>
+        <?php foreach ($compteur_data as $compteur): ?>
+        <div><?=$compteur->horodotage;?></div>        
+	<div><?=$compteur->message;?></div>
+        <?php endforeach; ?><a href="contact.html">Contact</a>
+    </body>
+</html>
