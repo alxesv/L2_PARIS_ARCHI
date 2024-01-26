@@ -10,24 +10,23 @@ cd backend
 
 pip3 install -r "requirements.txt"
 ```
+# If there are path issues, in home directory
+```bash
+sudo nano .bashrc
+
+# add to last line
+export PATH=$PATH:/your/directory 
+# with /your/directory being what you want to add to path
+```
 
 # Create .env according to exemple in README
 ```bash
 touch .env
 nano .env
 ```
+## Generate database
 ```bash
-
 python3 database.py
-
-#If there are path issues
-
-#in home directory
-sudo nano .bashrc
-
-# add to last line
-export PATH=$PATH:/your/directory 
-# with /your/directory being what you want to add to path
 ```
 ## You can start the app with 
 ```bash
