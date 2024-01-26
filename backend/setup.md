@@ -6,7 +6,7 @@ sudo apt install python3 python3-pip
 
 cd backend
 
-pip3 install -r "requirements.txt
+pip3 install -r "requirements.txt"
 
 #Create .env according to exemple in README
 
