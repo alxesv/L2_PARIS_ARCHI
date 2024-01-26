@@ -3,7 +3,7 @@
 Installation d'apache et de php
 ```bash
 sudo apt install apache2
-sudo apt install libapache2-mod-php curl-php
+sudo apt install libapache2-mod-php php-curl
 ```
 Cloner le projet
 ```bash
@@ -41,7 +41,7 @@ et rajouter ce morceau de code afin qu'apache puisse afficher le fichier index.p
         SetHandler application/x-httpd-php
 </FilesMatch>
 ```
-Aller dans le dossier frontend et créer un fichier .env avec la variable d'environnement suivante :
+Aller dans le dossier frontend et créer un fichier .env avec la variable d'environnement suivante : l'url doit être au format http://ip:port
 ```bash
 BASE_URL=("url de l'api")
 ```
