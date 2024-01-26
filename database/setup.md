@@ -46,4 +46,5 @@ psql -h localhost -U postgres
 create database bdd_archi;
 create user username with encrypted password 'password';
 grant all privileges on database bdd_archi to username;
+alter user username with superuser;
 ```
