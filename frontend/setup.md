@@ -3,7 +3,7 @@
 Installation d'apache et de php
 ```bash
 sudo apt install apache2
-sudo apt install libapache2-mod-php curl-php
+sudo apt install libapache2-mod-php php-curl
 ```
 Cloner le projet
 ```bash
