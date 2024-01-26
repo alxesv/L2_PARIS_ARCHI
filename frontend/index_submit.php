@@ -25,8 +25,16 @@ function verify_input($data) {
 $env = parse_ini_file('.env');
 if(isset($_POST['url'])) {
     	$uri = verify_input($_POST['url']);
-	if($uri[strlen($uri)-1] !== "/"){
-		$uri = $uri . "/";
+	$uri_split = explode("/", $uri);
+	$uri_split = array_filter($uri_split, function($value) { return !is_null($value) && $value !== ''; });
+	if(count($uri_split) === 2){
+	 	if($uri[strlen($uri)-1] !== "/"){
+                	$uri = $uri . "/";
+        	}
+	}else{
+		if($uri[strlen($uri)-1] === "/"){
+                	$uri =  substr($uri, 0,-1);
+        	}
 	}
     	$api_url =  "". $env["BASE_URL"] .$uri;
 	$data = getData($api_url);
