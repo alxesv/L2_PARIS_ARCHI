@@ -10,7 +10,7 @@ iface lo inet loopback
 # The primary network interface
 
 iface enp0s3 inet static
-address 10.100.1.0
+address 10.100.3.0
 netmask 255.255.252.0
 
 allow-hotplug enp0s8
